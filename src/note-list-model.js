@@ -1,12 +1,12 @@
 (function(exports){
- function NoteListModel(){this._list = [];}
+ function NoteListModel(list){this._list = list;}
 
 NoteListModel.prototype = {
  constructor: NoteListModel,
  readArray: function(){
    return(this._list)
- }, 
- 
+ },
+
  pushtoArray: function(item){
      this._list.push(item);
  }
