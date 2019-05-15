@@ -1,16 +1,12 @@
-(function(exports){
-  function testNoteListModel(){
-    var noteListModel = new NoteListModel([]);
-    assert.isArrayEqual(noteListModel.readArray(),noteListModel._list )
-  }
-  testNoteListModel()
-})(this);
-
 (function(){
-    function name(){
-    var noteListModel = new NoteListModel([]);
-    noteListModel.pushtoArray('hello')
-    assert.isArrayEqual(noteListModel.readArray(),['hello'] )
+    function testNodeListModel(){
+
+      function Notedouble(text){this.text = text};
+      Notedouble.prototype.get_text = function(){return this.text};
+
+    var noteListModel = new NoteListModel(Notedouble);
+    noteListModel.pushtoList('hello')
+    assert.isArrayEqual(noteListModel.readList(),['hello'] )
     }
-    name()
-})();
+    testNodeListModel()
+})(this);

@@ -1,16 +1,15 @@
 (function(exports){
- function NoteListModel(list){this._list = list;}
+  function NoteListModel(Note){
+    this.note = Note;
+    this._list = []};
 
-NoteListModel.prototype = {
- constructor: NoteListModel,
- readArray: function(){
-   return(this._list)
- },
+  NoteListModel.prototype.readList = function(){
+     return this._list.map(function(note){return note.get_text()})
+   };
 
- pushtoArray: function(item){
-     this._list.push(item);
- }
+  NoteListModel.prototype.pushtoList = function(notetext){
+    this._list.push(new this.note(notetext))
+  };
 
-}
  exports.NoteListModel = NoteListModel;
 })(this);
