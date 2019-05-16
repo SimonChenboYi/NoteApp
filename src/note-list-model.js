@@ -4,7 +4,7 @@
     this._list = []};
 
   NoteListModel.prototype.readList = function(){
-     return this._list.map(function(note){return note.get_text()})
+     return this._list.map(function(note){return note.getText()})
    };
 
   NoteListModel.prototype.pushtoList = function(notetext){
