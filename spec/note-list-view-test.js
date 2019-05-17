@@ -11,9 +11,11 @@
      Notedouble1.prototype.getId = function(){return 1};
      note1 = new Notedouble1();
 
-     notelist = [note0, note1]
+     function NoteListdouble(){};
+     NoteListdouble.prototype.getList = function(){return [note0, note1]}
+     notelist = new NoteListdouble();
 
-    var display = '<ul><li><div><a herf="http://localhost:8080#notes/0">Food: pesto</a></div></li><li><div><a herf="http://localhost:8080#notes/1">Drink: seltzer</a></div></li></ul>';
+    var display = '<ul><li><div><a href="http://localhost:8080#notes/0">Food: pesto</a></div></li><li><div><a href="http://localhost:8080#notes/1">Drink: seltzer</a></div></li></ul>';
     var noteListView = new NoteListView(notelist);
 
     assert.isTrue(noteListView.get_view() === display)
@@ -36,10 +38,12 @@
     Notedouble1.prototype.getId = function(){return 3};
     note3 = new Notedouble1();
 
-    notelist = [note2, note3]
+    function NoteListdouble(){};
+    NoteListdouble.prototype.getList = function(){return [note2, note3]}
+    notelist = new NoteListdouble();
 
 
-    var display = '<ul><li><div><a herf="http://localhost:8080#notes/2">Favourite food: pest</a></div></li><li><div><a herf="http://localhost:8080#notes/3">Favourite drink: sel</a></div></li></ul>';
+    var display = '<ul><li><div><a href="http://localhost:8080#notes/2">Favourite food: pest</a></div></li><li><div><a href="http://localhost:8080#notes/3">Favourite drink: sel</a></div></li></ul>';
 
     var noteListView = new NoteListView(notelist);
     assert.isTrue(noteListView.get_view() === display)

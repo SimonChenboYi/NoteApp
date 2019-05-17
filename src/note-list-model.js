@@ -11,9 +11,9 @@
     this._list.push(new this.note(notetext))
   };
 
-  NoteListModel.prototype.getList = function() {
+  NoteListModel.prototype.getList = function(){
     return this._list;
-  }
+  };
 
  exports.NoteListModel = NoteListModel;
 })(this);
